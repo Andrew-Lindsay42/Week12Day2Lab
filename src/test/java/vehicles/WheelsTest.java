@@ -21,6 +21,12 @@ public class WheelsTest {
     }
 
     @Test
+    public void canChangeManufacturer(){
+        wheels.setTyreManufacturer("Michelin");
+        assertEquals("Michelin", wheels.getTyreManufacturer());
+    }
+
+    @Test
     public void hasSize(){
         assertEquals(24, wheels.getSize());
     }
