@@ -16,7 +16,7 @@ public class EngineTest {
 
     @Test
     public void hasSize(){
-        assertEquals(4.2, engine.getSize());
+        assertEquals(4.2, engine.getSize(), 0);
     }
 
     @Test
