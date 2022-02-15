@@ -92,4 +92,12 @@ public class DealershipTest {
         Customer customer = new Customer("Greg", 1);
         assertEquals("Come back with more money", dealership.sellToCustomer(customer, car1));
     }
+    
+    @Test
+    public void canRepairCar() {
+        car1.increaseDamage(5000);
+        dealership.repair(car1, 2500);
+        assertEquals(2500, car1.getDamage(), 0);
+        assertEquals(97500, dealership.getTill(), 0);
+    }
 }
