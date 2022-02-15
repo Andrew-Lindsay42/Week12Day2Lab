@@ -59,4 +59,8 @@ public class Dealership {
         }
         return "Come back with more money";
     }
+
+    public void repair(Car car, double repairValue) {
+        decreaseTill(car.repairDamage(repairValue));
+    }
 }

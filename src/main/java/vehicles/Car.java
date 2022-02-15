@@ -90,11 +90,13 @@ public class Car {
         damage += d;
     }
 
-    public void repairDamage(double d) {
-        if (damage >= d) {
-            damage -= d;
+    public double repairDamage(double repairValue) {
+        if (damage >= repairValue) {
+            damage -= repairValue;
         } else {
+            repairValue = damage;
             damage = 0;
         }
+        return repairValue;
     }
 }
