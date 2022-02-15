@@ -32,8 +32,12 @@ public class Dealership {
         this.name = name;
     }
 
-    public void setTill(double till) {
-        this.till = till;
+    public void increaseTill(double amount) {
+        this.till += amount;
+    }
+
+    public void decreaseTill(double amount) {
+        this.till -= amount;
     }
 
     public void addCar(Car car) {
