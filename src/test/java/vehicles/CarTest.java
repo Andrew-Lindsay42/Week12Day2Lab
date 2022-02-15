@@ -91,4 +91,19 @@ public class CarTest {
     public void canDrive(){
         assertEquals("Vroom! Beep beep! Neeeoowww", car.drive());
     }
+
+    @Test
+    public void canIncreaseDamage(){
+        car.increaseDamage(1000);
+        assertEquals(1000, car.getDamage(), 0);
+        assertEquals(31000, car.getPrice(), 0);
+    }
+
+    @Test
+    public void canRepairDamage(){
+        car.increaseDamage(1000);
+        car.repairDamage(500);
+        assertEquals(500, car.getDamage(), 0);
+        assertEquals(31500, car.getPrice(), 0);
+    }
 }
