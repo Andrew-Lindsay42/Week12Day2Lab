@@ -106,4 +106,10 @@ public class CarTest {
         assertEquals(500, car.getDamage(), 0);
         assertEquals(31500, car.getPrice(), 0);
     }
+
+    @Test
+    public void cannotRepairDamageBeyond0(){
+        car.repairDamage(100);
+        assertEquals(0, car.getDamage(), 0);
+    }
 }

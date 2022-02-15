@@ -15,6 +15,7 @@ public class Car {
     private SteeringWheel steeringWheel;
     private int seats;
     private CarType carType;
+    private double damage;
 
     public Car(String make, String model, double price, String colour, Engine engine, Wheels wheels, SteeringWheel steeringWheel, int seats, CarType carType) {
         this.make = make;
@@ -26,6 +27,7 @@ public class Car {
         this.steeringWheel = steeringWheel;
         this.seats = seats;
         this.carType = carType;
+        this.damage = 0;
     }
 
     public String getMake() {
@@ -37,7 +39,7 @@ public class Car {
     }
 
     public double getPrice() {
-        return price;
+        return price - damage;
     }
 
     public String getColour() {
@@ -78,5 +80,21 @@ public class Car {
 
     public String drive(){
         return String.format("%s %s Neeeoowww", engine.start(), steeringWheel.tootHorn());
+    }
+
+    public double getDamage() {
+        return damage;
+    }
+
+    public void increaseDamage(double d) {
+        damage += d;
+    }
+
+    public void repairDamage(double d) {
+        if (damage >= d) {
+            damage -= d;
+        } else {
+            damage = 0;
+        }
     }
 }
