@@ -51,9 +51,14 @@ public class DealershipTest {
     }
 
     @Test
-    public void canUpdateTill(){
-        dealership.setTill(132000);
+    public void canIncreaseTill(){
+        dealership.increaseTill(32000);
         assertEquals(132000, dealership.getTill(), 0);
+    }
+
+    @Test public void canDecreaseTill(){
+        dealership.decreaseTill(10000);
+        assertEquals(90000, dealership.getTill(), 0);
     }
 
     @Test
