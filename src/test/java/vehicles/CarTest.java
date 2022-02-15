@@ -39,8 +39,20 @@ public class CarTest {
     }
 
     @Test
+    public void canChangePrice(){
+        car.setPrice(30000);
+        assertEquals(30000, car.getPrice(), 0);
+    }
+
+    @Test
     public void hasColour(){
         assertEquals("Red", car.getColour());
+    }
+
+    @Test
+    public void canChangeColour(){
+        car.setColour("Hot pink");
+        assertEquals("Hot pink", car.getColour());
     }
 
     @Test
@@ -50,6 +62,13 @@ public class CarTest {
 
     @Test
     public void hasWheels(){
+        assertEquals(wheels, car.getWheels());
+    }
+
+    @Test
+    public void canChangeWheels(){
+        wheels = new Wheels("Michelin", 24);
+        car.setWheels(wheels);
         assertEquals(wheels, car.getWheels());
     }
 
@@ -64,8 +83,8 @@ public class CarTest {
     }
 
     @Test
-    public void hasType(){
-        assertEquals(CarType.HYBRID, car.getType());
+    public void hasCarType(){
+        assertEquals(CarType.HYBRID, car.getCarType());
     }
 
     @Test
