@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 public class CustomerTest {
 
@@ -76,4 +76,14 @@ public class CustomerTest {
         assertEquals(100012, customer.getMoney(), 0);
     }
 
+    @Test
+    public void canAffordCar(){
+        customer.increaseMoney(100000);
+        assertTrue(customer.canAfford(car));
+    }
+
+    @Test
+    public void cannotAffordCar(){
+        assertFalse(customer.canAfford(car));
+    }
 }
