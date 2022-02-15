@@ -2,6 +2,7 @@ package places;
 
 import org.junit.Before;
 import org.junit.Test;
+import people.Customer;
 import vehicles.Car;
 import vehicles.CarType;
 import vehicles.parts.Engine;
@@ -78,5 +79,17 @@ public class DealershipTest {
         dealership.sellCar(car1);
         assertEquals(1, dealership.countCars());
         assertEquals(132000, dealership.getTill(), 0);
+    }
+
+    @Test
+    public void canSellToCustomerWithCash(){
+        Customer customer = new Customer("Paul", 50000);
+        assertEquals("Nice doing business with you", dealership.sellToCustomer(customer, car1));
+    }
+
+    @Test
+    public void doesNotSellToPoorCustomer() {
+        Customer customer = new Customer("Greg", 1);
+        assertEquals("Come back with more money", dealership.sellToCustomer(customer, car1));
     }
 }
