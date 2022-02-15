@@ -1,5 +1,6 @@
 package places;
 
+import people.Customer;
 import vehicles.Car;
 
 import java.util.ArrayList;
@@ -48,5 +49,14 @@ public class Dealership {
     public void sellCar(Car car) {
         cars.remove(car);
         increaseTill(car.getPrice());
+    }
+
+    public String sellToCustomer(Customer customer, Car car){
+        if (customer.canAfford(car)) {
+            sellCar(car);
+            customer.buyCar(car);
+            return "Nice doing business with you";
+        }
+        return "Come back with more money";
     }
 }
