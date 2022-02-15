@@ -53,7 +53,7 @@ public class DealershipTest {
     @Test
     public void canUpdateTill(){
         dealership.setTill(132000);
-        assertEquals(132000, dealership.getTill());
+        assertEquals(132000, dealership.getTill(), 0);
     }
 
     @Test
