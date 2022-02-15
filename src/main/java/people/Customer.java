@@ -35,6 +35,10 @@ public class Customer {
         return collection.size();
     }
 
+    public boolean canAfford(Car car){
+        return getMoney() >= car.getPrice();
+    }
+
     public void buyCar(Car car) {
         collection.add(car);
         decreaseMoney(car.getPrice());
