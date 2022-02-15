@@ -89,6 +89,6 @@ public class CarTest {
 
     @Test
     public void canDrive(){
-        assertEquals("Neeeoowww", car.drive());
+        assertEquals("Vroom! Beep beep! Neeeoowww", car.drive());
     }
 }

@@ -26,7 +26,7 @@ public class EngineTest {
 
     @Test
     public void canStart(){
-        assertEquals("Vroom", engine.start());
+        assertEquals("Vroom!", engine.start());
     }
 
     @Test
