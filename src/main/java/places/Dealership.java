@@ -42,9 +42,11 @@ public class Dealership {
 
     public void addCar(Car car) {
         cars.add(car);
+        decreaseTill(car.getPrice());
     }
 
     public void sellCar(Car car) {
         cars.remove(car);
+        increaseTill(car.getPrice());
     }
 }

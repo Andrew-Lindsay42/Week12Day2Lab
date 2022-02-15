@@ -23,8 +23,12 @@ public class Customer {
         return money;
     }
 
-    public void setMoney(double money) {
-        this.money = money;
+    public void increaseMoney(double amount) {
+        this.money += amount;
+    }
+
+    public void decreaseMoney(double amount) {
+        this.money -= amount;
     }
 
     public int countCars() {
@@ -33,9 +37,11 @@ public class Customer {
 
     public void buyCar(Car car) {
         collection.add(car);
+        decreaseMoney(car.getPrice());
     }
 
     public void sellCar(Car car) {
         collection.remove(car);
+        increaseMoney(car.getPrice());
     }
 }

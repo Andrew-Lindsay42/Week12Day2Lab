@@ -70,11 +70,13 @@ public class DealershipTest {
     public void canAddCar(){
         dealership.addCar(car1);
         assertEquals(3, dealership.countCars());
+        assertEquals(68000, dealership.getTill(), 0);
     }
 
     @Test
     public void canSellCar(){
         dealership.sellCar(car1);
         assertEquals(1, dealership.countCars());
+        assertEquals(132000, dealership.getTill(), 0);
     }
 }

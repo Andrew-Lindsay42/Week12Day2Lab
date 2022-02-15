@@ -2,11 +2,16 @@ package people;
 
 import org.junit.Before;
 import org.junit.Test;
+import places.Dealership;
 import vehicles.Car;
 import vehicles.CarType;
 import vehicles.parts.Engine;
 import vehicles.parts.SteeringWheel;
 import vehicles.parts.Wheels;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 
 import static org.junit.Assert.assertEquals;
 
@@ -38,9 +43,15 @@ public class CustomerTest {
     }
 
     @Test
-    public void canChangeMoney(){
-        customer.setMoney(16);
-        assertEquals(16, customer.getMoney(), 0);
+    public void canIncreaseMoney(){
+        customer.increaseMoney(16);
+        assertEquals(28, customer.getMoney(), 0);
+    }
+
+    @Test
+    public void canDecreaseMoney(){
+        customer.decreaseMoney(10);
+        assertEquals(2, customer.getMoney(), 0);
     }
 
     @Test
@@ -50,14 +61,19 @@ public class CustomerTest {
 
     @Test
     public void canAddCarToCollection(){
+        customer.increaseMoney(100000);
         customer.buyCar(car);
         assertEquals(1, customer.countCars());
+        assertEquals(68012, customer.getMoney(), 0);
     }
 
     @Test
     public void canRemoveCarFromCollection(){
+        customer.increaseMoney(100000);
         customer.buyCar(car);
         customer.sellCar(car);
         assertEquals(0, customer.countCars());
+        assertEquals(100012, customer.getMoney(), 0);
     }
+
 }
